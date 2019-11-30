@@ -181,7 +181,8 @@ fun <T> createGameBoard(width: Int): GameBoard<T> = object : GameBoard<T> {
     }
 
     override fun set(cell: Cell, value: T?) {
-        if (value != null) map[cell] = value
+//        if (value != null) map[cell] = value
+        map[cell] = value
     }
 
     override fun filter(predicate: (T?) -> Boolean): Collection<Cell> {

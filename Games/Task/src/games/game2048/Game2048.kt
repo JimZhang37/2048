@@ -41,7 +41,7 @@ class Game2048(private val initializer: Game2048Initializer<Int>) : Game {
  * Add a new value produced by 'initializer' to a specified cell in a board.
  */
 fun GameBoard<Int?>.addNewValue(initializer: Game2048Initializer<Int>) {
-    this.set(initializer.nextValue(this)?.first!!,initializer.nextValue(this)?.second)
+    this.set(initializer.nextValue(this)?.first!!, initializer.nextValue(this)?.second)
 }
 
 /*
@@ -53,7 +53,30 @@ fun GameBoard<Int?>.addNewValue(initializer: Game2048Initializer<Int>) {
  * Return 'true' if the values were moved and 'false' otherwise.
  */
 fun GameBoard<Int?>.moveValuesInRowOrColumn(rowOrColumn: List<Cell>): Boolean {
-    TODO()
+
+    var returnValue = false
+    var rowOrColumnLocal = mutableListOf<Int?>()
+    for (i in rowOrColumn) {
+
+        rowOrColumnLocal.add(get(i))
+    }
+
+    val line = rowOrColumnLocal.moveAndMergeEqual { it * 2 }
+
+    for ((index, value) in rowOrColumn.withIndex()) {
+        val tt = if ((index + 1) > line.size) null else line.get(index)
+        if (tt != this.get((value))) {
+            this.set(value, tt)
+            returnValue = true
+        }
+//        println(value)
+//        println(index)
+////        println(if(index >line.size-1){null} else{line.get(index)})
+//        println(this.get(value))
+    }
+//    println(this.toTestBoard())
+
+        return returnValue
 }
 
 /*

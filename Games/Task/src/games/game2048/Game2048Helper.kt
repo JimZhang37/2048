@@ -22,6 +22,7 @@ fun <T : Any> List<T?>.moveAndMergeEqual(merge: (T) -> T): List<T> {
 
     val listMutable= mutableListOf<T>()
     val list =this.filter{it!= null}
+//    list.forEach{println(it)}
     if(list.size == 1) return list.filterNotNull()
 //    val listB = this. filterNotNull()
     var i = 1
