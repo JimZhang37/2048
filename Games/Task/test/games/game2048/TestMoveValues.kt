@@ -42,7 +42,10 @@ class TestMoveValues : AbstractTestGameWithSmallNumbers() {
         val actualMove = board.moveValues(direction)
         val result = board.toTestBoard()
         Assert.assertEquals("Incorrect move to $direction.\n" +
-                "Input:\n$input\n", expected, result)
+                "Input:\n$input\n"
+                +"Expected:\n$expected\n"
+                +"Result:\n$result\n", expected, result)
+
         Assert.assertEquals("The 'moveValues' method returns incorrect result. Direction: $direction.\n" +
                 "Input:\n$input\n", expectedMove, actualMove)
     }

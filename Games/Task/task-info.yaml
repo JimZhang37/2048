@@ -103,7 +103,7 @@ files:
     selected: true
     status: Unchecked
   - offset: 1779
-    length: 675
+    length: 662
     placeholder_text: TODO()
     initial_state:
       length: 6
@@ -111,14 +111,14 @@ files:
     initialized_from_dependency: false
     selected: true
     status: Unchecked
-  - offset: 2795
-    length: 6
+  - offset: 2778
+    length: 2460
     placeholder_text: TODO()
     initial_state:
       length: 6
       offset: 2052
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
   text: |-
     package games.game2048
@@ -194,7 +194,7 @@ files:
   visible: true
   placeholders:
   - offset: 726
-    length: 582
+    length: 623
     placeholder_text: TODO()
     initial_state:
       length: 6

@@ -41,7 +41,8 @@ class TestMoveValuesInRowOrColumn : AbstractTestGameWithSmallNumbers() {
         val rowOrColumn = getRowOrColumn(board)
         val actualMove = board.moveValuesInRowOrColumn(rowOrColumn)
 
-        Assert.assertEquals("Incorrect move in $rowOrColumnName.\nInput:\n$inputBoard\n",
+        Assert.assertEquals("Incorrect move in $rowOrColumnName.\nInput:\n$inputBoard\n" ,
+
                 TestBoard(expected), board.toTestBoard())
 
         Assert.assertEquals("The 'moveValuesInRowOrColumn' method returns incorrect result for input:\n$inputBoard",

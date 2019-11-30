@@ -31,6 +31,8 @@ class TestGame2048 {
             // checking the state after initialization
             val first = moves[0]
             val second = moves[1]
+            println(second.board)
+            println(game.asString())
             Assert.assertEquals("Wrong result after board initialization " +
                     "by '${first.value}' at ${first.cell} and " +
                     "'${second.value}' at ${second.cell}",

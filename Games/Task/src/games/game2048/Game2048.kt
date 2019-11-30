@@ -74,9 +74,9 @@ fun GameBoard<Int?>.moveValuesInRowOrColumn(rowOrColumn: List<Cell>): Boolean {
 ////        println(if(index >line.size-1){null} else{line.get(index)})
 //        println(this.get(value))
     }
-//    println(this.toTestBoard())
+    println(rowOrColumn)
 
-        return returnValue
+    return returnValue
 }
 
 /*
@@ -87,5 +87,56 @@ fun GameBoard<Int?>.moveValuesInRowOrColumn(rowOrColumn: List<Cell>): Boolean {
  * Return 'true' if the values were moved and 'false' otherwise.
  */
 fun GameBoard<Int?>.moveValues(direction: Direction): Boolean {
-    TODO()
+
+
+    when (direction) {
+        Direction.DOWN -> {
+            println("DOWN")
+            val a = moveValuesInRowOrColumn(this.getColumn( 1..4,1).reversed())
+            val b = moveValuesInRowOrColumn(this.getColumn( 1..4,2).reversed())
+            val c = moveValuesInRowOrColumn(this.getColumn( 1..4,3).reversed())
+            val d = moveValuesInRowOrColumn(this.getColumn( 1..4,4).reversed())
+            return a || b || c || d
+        }
+        Direction.RIGHT -> {
+//            println("RIGHT")
+//            println(this.getRow(2, 1..4))
+//            return (moveValuesInRowOrColumn(this.getRow(1, 1..4))
+//                    && moveValuesInRowOrColumn(this.getRow(2, 1..4))
+//                    && moveValuesInRowOrColumn(this.getRow(3, 1..4))
+//                    && moveValuesInRowOrColumn(this.getRow(4, 1..4))
+//                    )
+            println("RIGHT")
+            println(this.getRow(2, 1..4))
+            val a = moveValuesInRowOrColumn(this.getRow(1, 1..4).reversed())
+            val b = moveValuesInRowOrColumn(this.getRow(2, 1..4).reversed())
+            val c = moveValuesInRowOrColumn(this.getRow(3, 1..4).reversed())
+            val d = moveValuesInRowOrColumn(this.getRow(4, 1..4).reversed())
+            return a || b || c || d
+        }
+        Direction.UP -> {
+            println("UP")
+            val a = moveValuesInRowOrColumn(this.getColumn( 1..4,1))
+            val b = moveValuesInRowOrColumn(this.getColumn( 1..4,2))
+            val c = moveValuesInRowOrColumn(this.getColumn( 1..4,3))
+            val d = moveValuesInRowOrColumn(this.getColumn( 1..4,4))
+            return a || b || c || d
+        }
+        Direction.LEFT -> {
+//            println("LEFT")
+//            return (moveValuesInRowOrColumn(this.getRow(1, 1..4).reversed())
+//                    && moveValuesInRowOrColumn(this.getRow(2, 1..4).reversed())
+//                    && moveValuesInRowOrColumn(this.getRow(3, 1..4).reversed())
+//                    && moveValuesInRowOrColumn(this.getRow(4, 1..4).reversed())
+//                    )
+//        }
+            println("RIGHT")
+            println(this.getRow(2, 1..4))
+            val a = moveValuesInRowOrColumn(this.getRow(1, 1..4))
+            val b = moveValuesInRowOrColumn(this.getRow(2, 1..4))
+            val c = moveValuesInRowOrColumn(this.getRow(3, 1..4))
+            val d = moveValuesInRowOrColumn(this.getRow(4, 1..4))
+            return a || b || c || d
+        }
+    }
 }
