@@ -183,10 +183,10 @@ fun <T> createGameBoard(width: Int): GameBoard<T> = object : GameBoard<T> {
     override fun set(cell: Cell, value: T?) {
 //        if (value != null) map[cell] = value
         map[cell] = value
-        println("beginning of set map")
-        println(cell)
-        println(value)
-        println("end of set map")
+//        println("beginning of set map")
+//        println(cell)
+//        println(value)
+//        println("end of set map")
     }
 
     override fun filter(predicate: (T?) -> Boolean): Collection<Cell> {
