@@ -41,7 +41,9 @@ class Game2048(private val initializer: Game2048Initializer<Int>) : Game {
  * Add a new value produced by 'initializer' to a specified cell in a board.
  */
 fun GameBoard<Int?>.addNewValue(initializer: Game2048Initializer<Int>) {
-    this.set(initializer.nextValue(this)?.first!!, initializer.nextValue(this)?.second)
+
+    val nextValue = initializer.nextValue(this)
+    this.set(nextValue?.first!!, nextValue?.second)
 }
 
 /*
@@ -92,10 +94,10 @@ fun GameBoard<Int?>.moveValues(direction: Direction): Boolean {
     when (direction) {
         Direction.DOWN -> {
             println("DOWN")
-            val a = moveValuesInRowOrColumn(this.getColumn( 1..4,1).reversed())
-            val b = moveValuesInRowOrColumn(this.getColumn( 1..4,2).reversed())
-            val c = moveValuesInRowOrColumn(this.getColumn( 1..4,3).reversed())
-            val d = moveValuesInRowOrColumn(this.getColumn( 1..4,4).reversed())
+            val a = moveValuesInRowOrColumn(this.getColumn(1..4, 1).reversed())
+            val b = moveValuesInRowOrColumn(this.getColumn(1..4, 2).reversed())
+            val c = moveValuesInRowOrColumn(this.getColumn(1..4, 3).reversed())
+            val d = moveValuesInRowOrColumn(this.getColumn(1..4, 4).reversed())
             return a || b || c || d
         }
         Direction.RIGHT -> {
@@ -116,10 +118,10 @@ fun GameBoard<Int?>.moveValues(direction: Direction): Boolean {
         }
         Direction.UP -> {
             println("UP")
-            val a = moveValuesInRowOrColumn(this.getColumn( 1..4,1))
-            val b = moveValuesInRowOrColumn(this.getColumn( 1..4,2))
-            val c = moveValuesInRowOrColumn(this.getColumn( 1..4,3))
-            val d = moveValuesInRowOrColumn(this.getColumn( 1..4,4))
+            val a = moveValuesInRowOrColumn(this.getColumn(1..4, 1))
+            val b = moveValuesInRowOrColumn(this.getColumn(1..4, 2))
+            val c = moveValuesInRowOrColumn(this.getColumn(1..4, 3))
+            val d = moveValuesInRowOrColumn(this.getColumn(1..4, 4))
             return a || b || c || d
         }
         Direction.LEFT -> {

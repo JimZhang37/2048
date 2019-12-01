@@ -48,7 +48,7 @@ files:
 - name: src/board/BoardImpl.kt
   visible: true
   placeholders:
-  - offset: 7329
+  - offset: 7448
     length: 6
     placeholder_text: TODO()
     initial_state:
@@ -57,7 +57,7 @@ files:
     initialized_from_dependency: false
     selected: false
     status: Unchecked
-  - offset: 7388
+  - offset: 7507
     length: 6
     placeholder_text: TODO()
     initial_state:
@@ -93,8 +93,8 @@ files:
 - name: src/games/game2048/Game2048.kt
   visible: true
   placeholders:
-  - offset: 1227
-    length: 83
+  - offset: 1224
+    length: 99
     placeholder_text: TODO()
     initial_state:
       length: 6
@@ -102,7 +102,7 @@ files:
     initialized_from_dependency: false
     selected: true
     status: Unchecked
-  - offset: 1779
+  - offset: 1792
     length: 662
     placeholder_text: TODO()
     initial_state:
@@ -111,7 +111,7 @@ files:
     initialized_from_dependency: false
     selected: true
     status: Unchecked
-  - offset: 2778
+  - offset: 2791
     length: 2460
     placeholder_text: TODO()
     initial_state:
