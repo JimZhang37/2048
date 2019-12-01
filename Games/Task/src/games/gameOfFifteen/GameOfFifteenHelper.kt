@@ -11,5 +11,22 @@ package games.gameOfFifteen
  * Thus the initial permutation should be correct.
  */
 fun isEven(permutation: List<Int>): Boolean {
-    TODO()
+    fun numOfS(num: Int, list: List<Int>):Int{
+        var returnNum=0
+        for (i in list){
+            if( num > i) returnNum++
+        }
+        return returnNum
+    }
+
+    var i = 0
+    var num = 0
+    val len = permutation.size
+    while(i < len){
+        num += numOfS(permutation[i],permutation.subList(i+1,len))
+
+        i++
+    }
+
+    return num%2==0
 }

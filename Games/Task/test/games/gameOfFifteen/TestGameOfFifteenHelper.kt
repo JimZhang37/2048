@@ -2,9 +2,12 @@ package games.gameOfFifteen
 
 import org.junit.Assert
 import org.junit.Test
+import kotlin.math.exp
 
 class TestGameOfFifteenHelper {
     private fun testPermutation(permutation: List<Int>, expected: Boolean) {
+        println(permutation)
+        println(expected)
         Assert.assertEquals("The following permutation should be ${if (expected) "even" else "odd"}: $permutation", expected,
             isEven(permutation))
     }
